@@ -1,0 +1,13 @@
+{
+    "cmake.configureOnOpen": true,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.path": "clangd-16",
+    "clangd.arguments": [
+        "--background-index", // 后台建立索引
+        "--clang-tidy", // 启用clang-tidy
+        "--completion-style=bundled", // 自动补全合并重载函数
+        "--header-insertion=never", // 不自动插入include
+        "-j", "2", // 异步worker数
+        "--pch-storage=memory", // 预编译头存储在内存中，提升性能
+    ]
+}
