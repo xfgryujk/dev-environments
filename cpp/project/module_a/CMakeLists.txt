@@ -9,4 +9,6 @@ add_executable(module_a ${SRC_FILES})
 
 target_include_directories(module_a PRIVATE ".")
 
-target_link_libraries(module_a PRIVATE pthread)
+target_link_libraries(module_a PRIVATE Threads::Threads)
+
+target_precompile_headers(module_a PRIVATE <iostream>)

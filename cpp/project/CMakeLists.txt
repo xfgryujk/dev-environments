@@ -8,5 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 生成编译数据库
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# 项目
+# 依赖
+find_package(Threads REQUIRED)
+
+# 模块
 add_subdirectory("module_a")

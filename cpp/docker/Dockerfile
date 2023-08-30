@@ -47,7 +47,14 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v3.27.4/cmake-3.27.4
     && rm -f cmake-3.27.4-linux-x86_64.sh
 
 # 常用命令
-RUN apt-get install -y vim less man htop curl net-tools iputils-ping gdb gdbserver
+RUN apt-get install -y vim less man htop curl net-tools iputils-ping gdb gdbserver git
+
+# SSH服务器，需要的时候手动运行/usr/sbin/sshd。记得加公钥和端口映射
+RUN apt-get install -y openssh-server \
+    && mkdir -p /run/sshd \
+    && touch .ssh/authorized_key \
+    && chmod 600 .ssh/authorized_key
+EXPOSE 22
 
 #
 # 用户设置
